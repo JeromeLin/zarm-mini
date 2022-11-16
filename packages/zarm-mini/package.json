@@ -1,0 +1,33 @@
+{
+  "name": "zarm-mini",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "types/index.d.ts",
+  "scripts": {
+    "clean": "rimraf types lib es dist coverage",
+    "build:types": "rimraf types && tsc --outDir types -d --emitDeclarationOnly",
+    "build:es": "rimraf es && zarm build --mode es --path src --out-dir es --copy-files --build-css",
+    "build:lib": "rimraf lib && zarm build --mode lib --path src --out-dir lib --copy-files --build-css",
+    "build": "pnpm build:types && pnpm build:lib && pnpm build:es",
+    "dev": "pnpm run build -- -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "iOS >= 7",
+    "Android >= 4"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@tarojs/components": "^3.5.7",
+    "react": "^18.0.2"
+  },
+  "devDependencies": {
+    "@zarm-design/bem": "^0.0.1",
+    "@zarm-design/cli": "^0.0.40"
+  }
+}
