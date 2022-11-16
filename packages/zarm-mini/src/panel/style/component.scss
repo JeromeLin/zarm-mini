@@ -1,0 +1,46 @@
+@include b(panel) {
+  @include define(header-padding, '50px 32px 20px 32px');
+  @include define(header-font-size, 26px);
+  @include define(header-color, rgba(60, 60, 67, 0.6));
+  @include define(body-background, #fff);
+  @include define(body-font-size,  var(--za-font-size-md));
+  @include define(body-color, var(--za-color-text));
+  @include define(body-border-radius, 20px);
+  @include define(spacing-padding-horizontal, 32px);
+
+  @include e(header) {
+    display: flex;
+    padding: var(--header-padding);
+    font-size: var(--header-font-size);
+    color: var(--header-color);
+
+    &__title {
+      flex: 1;
+    }
+  }
+
+  @include e(body) {
+    position: relative;
+    background: var(--body-background);
+    font-size: var(--body-font-size);
+    color: var(--body-color);
+  }
+
+  @include m(spacing) {
+    padding: 0 var(--spacing-padding-horizontal);
+
+    @include e(body) {
+      border-radius: var(--body-border-radius);
+      overflow: hidden;
+      @include onepx(none);
+    }
+  }
+
+  &:not(&--spacing) {
+    @include m(bordered) {
+      @include e(body) {
+        @include onepx(top bottom);
+      }
+    }
+  }
+}
