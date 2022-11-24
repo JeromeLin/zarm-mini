@@ -43,6 +43,19 @@ const config = {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
+      },
+      'postcss-transform-selector': {
+        enable: true,
+        config: {
+          selector: 'page',
+          transform: (decl) => {
+            var oldValue = decl.value
+            const val = oldValue.replace(/(\d*\.?\d+)(rpx)/g, (match, value, unit) => {
+              return parseInt(value, 10) * 2 + unit;
+            })
+            decl.value = val;
+          }
+        }
       }
     }
   },
@@ -61,8 +74,28 @@ const config = {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
+      },
+      'postcss-selector-replace': {
+        enable: true,
+        config: {
+          before: ['page'],
+          after: [':root'],
+        }
+      },
+      'postcss-transform-selector': {
+        enable: true,
+        config: {
+          selector: ':root',
+          transform: (decl) => {
+            var oldValue = decl.value
+            const val = oldValue.replace(/(\d*\.?\d+)(rem)/g, (match, value, unit) => {
+              return value * 2 + unit;
+            })
+            decl.value = val;
+          }
+        }
       }
-    }
+    },
   },
   rn: {
     appName: 'taroDemo',

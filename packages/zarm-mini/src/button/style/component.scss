@@ -49,47 +49,63 @@
   @include button-size;
   @include button-shape;
 
+  position: relative;
+
+  @include m(base) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+  }
   // theme
   @include m(default) {
-    // @include button-theme(
-    //   var(--background),
-    //   var(--border-color),
-    //   var(--text-color),
-    //   var(--loading-color),
-    //   var(--active-background),
-    //   var(--active-border-color),
-    //   var(--active-text-color),
-    //   var(--active-loading-color),
-    //   var(--shadow),
-    // );
+    @include button-theme(
+      var(--background),
+      var(--border-color),
+      var(--text-color),
+      var(--loading-color),
+      var(--active-background),
+      var(--active-border-color),
+      var(--active-text-color),
+      var(--active-loading-color),
+      var(--shadow),
+    );
   }
 
   @include m(primary) {
-    // @include button-theme(
-    //   var(--primary-background),
-    //   var(--primary-border-color),
-    //   var(--primary-text-color),
-    //   var(--primary-loading-color),
-    //   var(--primary-active-background),
-    //   var(--primary-active-border-color),
-    //   var(--primary-active-text-color),
-    //   var(--primary-active-loading-color),
-    //   var(--primary-shadow),
-    // );
+    @include button-theme(
+      var(--primary-background),
+      var(--primary-border-color),
+      var(--primary-text-color),
+      var(--primary-loading-color),
+      var(--primary-active-background),
+      var(--primary-active-border-color),
+      var(--primary-active-text-color),
+      var(--primary-active-loading-color),
+      var(--primary-shadow),
+    );
   }
 
   @include m(danger) {
-    // @include button-theme(
-    //   var(--danger-background),
-    //   var(--danger-border-color),
-    //   var(--danger-text-color),
-    //   var(--danger-loading-color),
-    //   var(--danger-active-background),
-    //   var(--danger-active-border-color),
-    //   var(--danger-active-text-color),
-    //   var(--danger-active-loading-color),
-    //   var(--danger-shadow),
-    // );
+    @include button-theme(
+      var(--danger-background),
+      var(--danger-border-color),
+      var(--danger-text-color),
+      var(--danger-loading-color),
+      var(--danger-active-background),
+      var(--danger-active-border-color),
+      var(--danger-active-text-color),
+      var(--danger-active-loading-color),
+      var(--danger-shadow),
+    );
   }
 
   // size
