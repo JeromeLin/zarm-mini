@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<div>
+  <taro-view-core
+    class="za-button za-button--default za-button--md za-button--radius"
+  >
+    <taro-button-core
+      class="za-button--base"
+      htmltype="button"
+    />
+    <taro-view-core
+      class="za-button__content"
+    >
+      <taro-text-core>
+        foo
+      </taro-text-core>
+    </taro-view-core>
+  </taro-view-core>
+</div>
+`;
