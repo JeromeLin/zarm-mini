@@ -15,8 +15,8 @@ module.exports = {
   // setupFiles: [
   //   '<rootDir>/setup.ts',
   // ],
-  collectCoverage: true,
-  coverageReporters: ['html', 'text-summary', 'lcov'],
-  coverageDirectory: '<rootDir>/src/test/coverage',
+  // collectCoverage: true,
+  // coverageReporters: ['html', 'text-summary', 'lcov'],
+  // coverageDirectory: '<rootDir>/src/test/coverage',
 
 };
