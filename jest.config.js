@@ -11,7 +11,7 @@ module.exports = {
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/zarm-min/(?!@taro)'],
+  transformIgnorePatterns: ['<rootDir>/packages/zarm-min/node_modules/(?!@taro)'],
   // setupFiles: [
   //   '<rootDir>/setup.ts',
   // ],
