@@ -1,0 +1,96 @@
+@mixin slide-motion($className, $keyframeName) {
+  $name: #{$prefixCls}-#{$className};
+  @include make-motion($name, #{$prefixCls}-#{$keyframeName});
+  .#{$name}-enter,
+  .#{$name}-appear {
+    animation-timing-function: ease-out;
+  }
+  .#{$name}-leave {
+    animation-timing-function: ease-in;
+  }
+}
+
+@include slide-motion(slide-up, slide-up);
+@include slide-motion(slide-down, slide-down);
+@include slide-motion(slide-left, slide-left);
+@include slide-motion(slide-right, slide-right);
+
+@keyframes #{$prefixCls}-slide-up-in {
+  from {
+    transform: translate3d(0, 100px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-up-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 100px, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-down-in {
+  from {
+    transform: translate3d(0, -100px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-down-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-left-in {
+  from {
+    transform: translate3d(-150px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-left-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-150px, 0, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-right-in {
+  from {
+    transform: translate3d(150px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes #{$prefixCls}-slide-right-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(150px, 0, 0);
+  }
+}

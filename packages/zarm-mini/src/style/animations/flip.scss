@@ -1,0 +1,48 @@
+@mixin flip-motion($className, $keyframeName) {
+  $name: #{$prefixCls}-#{$className};
+  @include make-motion($name, #{$prefixCls}-#{$keyframeName});
+  .#{$name}-enter,
+  .#{$name}-appear {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.4, 0, 0, 0);
+    backface-visibility: visible !important;
+  }
+  .#{$name}-leave {
+    animation-timing-function: ease;
+    backface-visibility: visible !important;
+  }
+}
+
+@include flip-motion(flip, flip);
+
+@keyframes #{$prefixCls}-flip-in {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(1, 0, 0, 60deg);
+  }
+
+  70% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(400px);
+  }
+}
+
+@keyframes #{$prefixCls}-flip-out {
+  from {
+    opacity: 1;
+    transform: perspective(400px);
+  }
+
+  30% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
+  }
+
+  to {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(1, 0, 0, 45deg);
+  }
+}

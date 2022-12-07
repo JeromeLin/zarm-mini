@@ -10,6 +10,7 @@ module.exports = {
   plugins: [['import', {
     libraryName: 'zarm-mini',
     customName: (name) => {
+
       return `zarm-mini/src/${name}/index.ts`;
     },
     customStyleName: (name) => {

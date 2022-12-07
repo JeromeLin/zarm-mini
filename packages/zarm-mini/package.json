@@ -23,12 +23,13 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@tarojs/components": "^3.5.7",
-    "react": "^18.0.2"
+    "@tarojs/components": "^3.5.7"
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@zarm-design/bem": "^0.0.1",
-    "@zarm-design/cli": "^0.0.40"
+    "react-transition-group": "^4.4.5",
+    "zarm": "3.0.0-alpha.2",
+    "react": "^18.0.2"
   }
 }
