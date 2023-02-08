@@ -75,20 +75,20 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       },
-      'postcss-selector-replace': {
-        enable: true,
-        config: {
-          before: ['page'],
-          after: [':root'],
-        }
-      },
+      // 'postcss-selector-replace': {
+      //   enable: true,
+      //   config: {
+      //     before: ['page'],
+      //     after: [':root'],
+      //   }
+      // },
       'postcss-transform-selector': {
         enable: true,
         config: {
-          selector: ':root',
+          selector: 'page, :root',
           transform: (decl) => {
             var oldValue = decl.value
-            const val = oldValue.replace(/(\d*\.?\d+)(rem)/g, (match, value, unit) => {
+            const val = oldValue.replace(/(\d*\.?\d+)(px)/g, (match, value, unit) => {
               return value * 2 + unit;
             })
             decl.value = val;
